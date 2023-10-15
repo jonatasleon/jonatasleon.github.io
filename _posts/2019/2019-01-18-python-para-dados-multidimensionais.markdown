@@ -2,8 +2,8 @@
 layout: post
 title: Manipulação de Dados Multidimensionais com Python
 date: '2019-01-18 01:09'
-categories: python meteorologia netcdf
-tags: python
+categories: python tutorial
+tags: python netcdf xarray dask
 ---
 
 Conteúdo rápido para consultas posteriores sobre manipulação de dados multidimensionais com Python.
@@ -89,6 +89,6 @@ Para gerar gráficos, vamos utilizar a api da biblioteca [`xarray`](http://xarra
 plt.figure(figsize=(12, 8))
 mag.isel(zlev=0).plot(x='lon', y='lat', col='time', col_wrap=3)
 ```
-![Plotting magnitude série temporal](../images/2019/01/plotting-magnitude-serie-temporal.png)
+![Plotting magnitude série temporal](/images/2019/01/plotting-magnitude-serie-temporal.png)
 
 [98702aed]: https://www.ncdc.noaa.gov/data-access/marineocean-data/blended-global/blended-sea-winds "Blended Sea Winds"

@@ -2,8 +2,9 @@
 layout: "post"
 title: "vimgrep: Pesquisando por texto sem sair do vim"
 date: "2019-03-31 19:39"
-feature: 'images/vimgrep-feature.png'
-tags: vi vim vimgrep grep multiplos varios arquivos
+feature: '/images/vimgrep-feature.png'
+category: vim tutorial
+tags: vi vim vimgrep grep
 ---
 
 Para quem está iniciando com vim ou o utiliza eventualmente, pode parecer comum
