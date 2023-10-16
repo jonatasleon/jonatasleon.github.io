@@ -46,7 +46,7 @@ ds = xr.open_mfdataset(filenames)
 print(ds)
 ```
 
-A função [`open_mfdataset`](http://xarray.pydata.org/en/stable/generated/xarray.open_mfdataset.html) recebe a lista de arquivos para abrir e retorna um objeto [`xarray.Dataset`](http://xarray.pydata.org/en/stable/generated/xarray.Dataset.html). O resultado de `print(ds)` são os metadados dos dados abertos.
+A função [`open_mfdataset`](https://xarray.pydata.org/en/stable/generated/xarray.open_mfdataset.html) recebe a lista de arquivos para abrir e retorna um objeto [`xarray.Dataset`](https://xarray.pydata.org/en/stable/generated/xarray.Dataset.html). O resultado de `print(ds)` são os metadados dos dados abertos.
 
 ```text
 <xarray.Dataset>
@@ -66,7 +66,7 @@ Attributes:
     source:              Multiple satellite observations: DMSP SSMI F08, F10,...
     summary:             Gridded and blended sea surface vector winds from mu...
     Keywords:            sea winds, ocean winds, sea surface winds, air-sea i...
-    references:          links at http://www.ncdc.noaa.gov/oa/rsad/blendedsea...
+    references:          links at https://www.ncdc.noaa.gov/oa/rsad/blendedsea...
     History:             Simple spatiotemporally weighted Interpolation (SI),...
     institution:         NOAA NESDIS National Climatic Data Center
     Contact:             Huai-Min.Zhang AT noaa.gov or satorder AT noaa.gov; ...
@@ -81,9 +81,8 @@ import numpy as np
 
 mag = np.sqrt(ds['u'] ** 2 + ds['v'] ** 2)
 ```
-Obs.: Um material para consulta, [aqui](http://www.iag.usp.br/~agg_1400200/moddata/METEOROLOGIA/5_Vento_completo.pdf).
 
-Para gerar gráficos, vamos utilizar a api da biblioteca [`xarray`](http://xarray.pydata.org/en/stable/plotting.html).
+Para gerar gráficos, vamos utilizar a api da biblioteca [`xarray`](https://xarray.pydata.org/en/stable/plotting.html).
 
 ```python
 plt.figure(figsize=(12, 8))

@@ -71,7 +71,7 @@ ignorando `/`, que é utilizado para determinar o início e o fim do padrão. Co
 essa representação se procura um trecho que tenha as palavras `config`
 e `builder`, as quais devem ocorrer na ordem que foram declaradas e estar na
 mesma linha, podendo, ou não, haver qualquer texto entres cada palavra. Veja
-mais aqui: http://vimregex.com.
+mais aqui: https://vimregex.com.
 
 <script id="asciicast-237827" src="https://asciinema.org/a/237827.js" async></script>
 <center>
