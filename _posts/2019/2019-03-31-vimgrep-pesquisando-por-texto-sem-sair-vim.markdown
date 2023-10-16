@@ -2,8 +2,9 @@
 layout: "post"
 title: "vimgrep: Pesquisando por texto sem sair do vim"
 date: "2019-03-31 19:39"
-feature: 'images/vimgrep-feature.png'
-tags: vi vim vimgrep grep multiplos varios arquivos
+feature: '/images/vimgrep-feature.png'
+category: vim tutorial
+tags: vi vim vimgrep grep
 ---
 
 Para quem está iniciando com vim ou o utiliza eventualmente, pode parecer comum
@@ -70,7 +71,7 @@ ignorando `/`, que é utilizado para determinar o início e o fim do padrão. Co
 essa representação se procura um trecho que tenha as palavras `config`
 e `builder`, as quais devem ocorrer na ordem que foram declaradas e estar na
 mesma linha, podendo, ou não, haver qualquer texto entres cada palavra. Veja
-mais aqui: http://vimregex.com.
+mais aqui: https://vimregex.com.
 
 <script id="asciicast-237827" src="https://asciinema.org/a/237827.js" async></script>
 <center>
