@@ -14,9 +14,11 @@ timezone: America/Sao_Paulo
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Jonatas Leon # the main title
+# main title of the site
+title: Jonatas Leon
 
-tagline: Desenvolvimento e tecnologia # it will display as the sub-title
+# subtitle
+tagline: Desenvolvimento e tecnologia
 
 description: >- # used by seo meta and the atom feed
   Um blog sobre desenvolvimento de software, tecnologia e outras coisas que eu gosto.
