@@ -4,8 +4,6 @@ date: 2024-01-16
 excerpt: Demonstrating LaTeX math equation support in blog posts
 ---
 
-# Math Equations Example
-
 This post demonstrates how to use math equations in your blog posts.
 
 ## Inline Math

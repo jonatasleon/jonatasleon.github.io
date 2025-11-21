@@ -12,8 +12,8 @@ export default function Home({ posts }: HomeProps) {
     <Layout>
       <div className="container">
         <header className="header">
-          <h1>My Personal Blog</h1>
-          <p>Welcome to my blog where I share my thoughts and experiences.</p>
+          <h1>June's Echo</h1>
+          <p>A blog about my thoughts and experiences.</p>
         </header>
 
         <section className="posts">

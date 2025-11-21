@@ -4,8 +4,6 @@ date: 2024-01-15
 excerpt: This is my first blog post. Welcome!
 ---
 
-# Welcome to My Blog
-
 Hello and welcome to my personal blog! This is where I'll be sharing my thoughts, experiences, and learnings.
 
 ## What to Expect

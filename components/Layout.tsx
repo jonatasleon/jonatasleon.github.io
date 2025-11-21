@@ -10,9 +10,6 @@ export default function Layout({ children }: LayoutProps) {
     <>
       <nav className="navbar">
         <div className="nav-container">
-          <Link href="/" className="nav-logo">
-            My Blog
-          </Link>
           <Link href="/" className="nav-link">
             Home
           </Link>
@@ -21,7 +18,7 @@ export default function Layout({ children }: LayoutProps) {
       <main>{children}</main>
       <footer className="footer">
         <div className="footer-container">
-          <p>&copy; {new Date().getFullYear()} My Personal Blog</p>
+          <p>&copy; {new Date().getFullYear()} June's Echo</p>
         </div>
       </footer>
 
