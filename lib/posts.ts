@@ -6,6 +6,7 @@ import remarkMath from 'remark-math';
 import remarkRehype from 'remark-rehype';
 import rehypeKatex from 'rehype-katex';
 import rehypeStringify from 'rehype-stringify';
+import { rehypeImagePaths } from './rehype-image-paths';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -34,6 +35,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
   const processedContent = await remark()
     .use(remarkMath)
     .use(remarkRehype)
+    .use(rehypeImagePaths(slug))
     .use(rehypeKatex)
     .use(rehypeStringify)
     .process(content);
