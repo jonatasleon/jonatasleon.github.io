@@ -16,7 +16,7 @@ I'm currently spending some time on a side project where I'm using [Prefect](htt
 
 That's where Doppler comes in.
 
-## TLDR
+## TL;DR
 
 If you already use Prefect and Doppler, skip directly to [The code](#the-code) for the implementation.
 
@@ -277,7 +277,7 @@ We should see the secret API key printed in the console:
 prefect.engine - View at https://app.prefect.cloud/account/24a1d5dd-fc9f-4a8e-a812-42e5648ba921/workspace/5495293d-ab61-4b84-9ad7-84c2d203ce73/runs/flow-run/06949dca-954e-7189-8000-d8b048e75ad8
 Flow run 'amaranth-caterpillar' - Beginning flow run 'amaranth-caterpillar' for flow 'my-flow'
 Flow run 'amaranth-caterpillar' - View at https://app.prefect.cloud/account/24a1d5dd-fc9f-4a8e-a812-42e5648ba921/workspace/5495293d-ab61-4b84-9ad7-84c2d203ce73/runs/flow-run/06949dca-954e-7189-8000-d8b048e75ad8
-0123456789
+1234567890
 Flow run 'amaranth-caterpillar' - Finished in state Completed()
 ```
 
@@ -287,6 +287,8 @@ That's it! We have the secrets loaded into the environment variables and we can 
 
 ## Conclusion
 
-In this post, we saw how to use Doppler to manage secrets in Prefect. We created a new block in Prefect to store the Doppler configuration and we loaded the secrets from Doppler into the environment variables. Finally we saw how to use the secrets in our flow.
+In this post, we explored how to use Doppler to manage secrets in Prefect by centralizing secret management outside the orchestration layer. We used a single Prefect Secret block only to store Doppler configuration, while delegating all actual secret management to Doppler and exposing secrets to the application via environment variables.
+
+Although this approach does not completely eliminate the use of Prefect Secret blocks, it reduces them to a single, stable integration point. In return, Doppler provides significantly more flexibility, control, and scalability for managing secrets, especially as a project grows to medium or large size.
 
 I hope you found this post helpful. If you have any questions, feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/jonatasleon/).
