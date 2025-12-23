@@ -20,6 +20,10 @@ That's where Doppler comes in.
 
 If you already use Prefect and Doppler, skip directly to [The code](#the-code) for the implementation.
 
+## Source code
+
+The source code for this example is available on [GitHub](https://github.com/jonatasleon/prefect-doppler-config).
+
 ## Doppler
 
 Doppler is a centralized secret manager that syncs environment-specific secrets to applications via environment variables, SDKs, or CLI, with built-in support for access control, rotation, and multiple deployment environments.
@@ -147,10 +151,10 @@ pip install doppler-sdk prefect python-dotenv pydantic pydantic-settings
 
 ## Whispering our secrets to Prefect
 
-First things first, let's create a `settings.py` file to load our configuration from environment variables.
+First things first, let's create a `src/settings.py` file to load our configuration from environment variables.
 
 ```python
-# settings.py
+# src/settings.py
 
 from pydantic_settings import BaseSettings
 
@@ -159,10 +163,10 @@ class Settings(BaseSettings):
 
 ```
 
-Now, in `secrets.py` file, we can define the function that brings our secrets to life.
+Now we can define the function that brings our secrets to life.
 
 ```python
-# secrets.py
+# src/settings.py
 
 from io import StringIO
 
@@ -222,12 +226,11 @@ Until now, we have the secrets loaded into the environment variables. Let's see 
 Now we can load the secrets in our flow.
 
 ```python
-# my_flow.py
+# src/my_flow.py
 
 from prefect import flow
 
-from .secrets import load_secrets_from_doppler
-from .settings import Settings
+from .settings import Settings, load_secrets_from_doppler
 
 
 @flow
@@ -265,10 +268,10 @@ Now let's run the flow.
 
 ```bash
 # Using uv
-uv run python my_flow.py
+uv run python src/my_flow.py
 
 # Using pip with virtual environment
-python my_flow.py
+python src/my_flow.py
 ```
 
 We should see the secret API key printed in the console:
@@ -290,5 +293,7 @@ That's it! We have the secrets loaded into the environment variables and we can 
 In this post, we explored how to use Doppler to manage secrets in Prefect by centralizing secret management outside the orchestration layer. We used a single Prefect Secret block only to store Doppler configuration, while delegating all actual secret management to Doppler and exposing secrets to the application via environment variables.
 
 Although this approach does not completely eliminate the use of Prefect Secret blocks, it reduces them to a single, stable integration point. In return, Doppler provides significantly more flexibility, control, and scalability for managing secrets, especially as a project grows to medium or large size.
+
+The complete and runnable example of the code used in this post is available on Github: <https://github.com/jonatasleon/prefect-doppler-config>.
 
 I hope you found this post helpful. If you have any questions, feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/jonatasleon/).
