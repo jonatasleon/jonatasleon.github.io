@@ -76,6 +76,29 @@ export default function PostPage({ post }: PostPageProps) {
           color: #333;
         }
 
+        .post-content :global(h1 .anchor-link),
+        .post-content :global(h2 .anchor-link),
+        .post-content :global(h3 .anchor-link),
+        .post-content :global(h4 .anchor-link) {
+          color: inherit;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .post-content :global(h1:hover),
+        .post-content :global(h2:hover),
+        .post-content :global(h3:hover),
+        .post-content :global(h4:hover) {
+          color: #2563eb;
+        }
+
+        .post-content :global(h1:hover .anchor-link),
+        .post-content :global(h2:hover .anchor-link),
+        .post-content :global(h3:hover .anchor-link),
+        .post-content :global(h4:hover .anchor-link) {
+          text-decoration: underline;
+        }
+
         .post-content :global(h1) {
           font-size: 2rem;
         }

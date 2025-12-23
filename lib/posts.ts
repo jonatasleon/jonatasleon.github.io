@@ -4,6 +4,8 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import remarkMath from 'remark-math';
 import remarkRehype from 'remark-rehype';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeKatex from 'rehype-katex';
 import rehypeStringify from 'rehype-stringify';
 import { rehypeImagePaths } from './rehype-image-paths';
@@ -35,6 +37,13 @@ export async function getPostBySlug(slug: string): Promise<Post> {
   const processedContent = await remark()
     .use(remarkMath)
     .use(remarkRehype)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings, {
+      behavior: 'wrap',
+      properties: {
+        className: ['anchor-link'],
+      },
+    })
     .use(rehypeImagePaths(slug))
     .use(rehypeKatex)
     .use(rehypeStringify)
