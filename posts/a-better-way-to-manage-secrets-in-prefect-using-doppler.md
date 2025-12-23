@@ -33,19 +33,19 @@ Note that you don't need to provide credit card information to start using the s
 
 1. For this example, I'll create a project called `my-project`:
 
-   ![Creating a project](./images/SCR-20251222-qufz.png)
+   ![Creating a project](/SCR-20251222-qufz.png)
 
 2. As soon as we create the project, Doppler automatically creates three environments and their slugs: **Development**(`dev`), **Staging**(`stg`) and **Production**(`prd`).
 
-   ![Created environments](./images/SCR-20251222-qvxj.png)
+   ![Created environments](/SCR-20251222-qvxj.png)
 
 3. Let's define a secret called `SECRET_API_KEY` and we'll set the value to `1234567890`. After entering the value, click the Save button.
 
-   ![Creating a secret](./images/SCR-20251222-qxhf.png)
+   ![Creating a secret](/SCR-20251222-qxhf.png)
 
 4. After saving, Doppler will ask whether you want to propagate this secret. You can choose to propagate it to all environments or just to the selected ones.
 
-   ![Spreading secrets](./images/SCR-20251222-qxyi.png)
+   ![Spreading secrets](/SCR-20251222-qxyi.png)
 
 ### Setting up an access token
 
@@ -53,11 +53,11 @@ We also need to create an access token to be able to retrieve the secrets from t
 
 1. On the Doppler dashboard, select the project and click on "Access", then click on "Generate":
 
-   ![Generate access token](./images/SCR-20251222-rpko.png)
+   ![Generate access token](/SCR-20251222-rpko.png)
 
 2. Then enter with a name for the access token and click on "Generate", then copy the access token.
 
-   ![Enter name for access token](./images/SCR-20251222-rqbu.png)
+   ![Enter name for access token](/SCR-20251222-rqbu.png)
 
    > For security reasons, it's recommended to scope the access token for read-only.
 
@@ -80,23 +80,23 @@ In the Prefect UI, let's access the blocks section:
 
 1. First click on "Settings" on the sidebar:
 
-   ![Creating a new block](./images/SCR-20251222-rfqx.png)
+   ![Creating a new block](/SCR-20251222-rfqx.png)
 
 2. Then click on "Blocks":
 
-   ![Blocks section](./images/SCR-20251222-rjgd.png)
+   ![Blocks section](/SCR-20251222-rjgd.png)
 
 3. Then click on "Block +"
 
-   ![Create block](./images/SCR-20251222-rjvj.png)
+   ![Create block](/SCR-20251222-rjvj.png)
 
 4. Then search for "Secret"
 
-   ![Search for "Secret"](./images/SCR-20251222-rjys.png)
+   ![Search for "Secret"](/SCR-20251222-rjys.png)
 
 5. Then click on "Secret"
 
-    ![Secret block](./images/SCR-20251222-rlbc.png)
+    ![Secret block](/SCR-20251222-rlbc.png)
 
 6. Now we need to fill the form with the following information:
    - Name: `doppler-config`
@@ -113,7 +113,7 @@ In the Prefect UI, let's access the blocks section:
 
       Remember to replace the `access_token` with the one you copied earlier.
 
-   ![Fill the form](./images/SCR-20251222-rmib.png)
+   ![Fill the form](/SCR-20251222-rmib.png)
 
    Then click on "Create"
 
