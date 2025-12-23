@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { getAllPosts, getPostBySlug, Post } from '@/lib/posts';
 import Layout from '@/components/Layout';
+import SEO from '@/components/SEO';
 import 'highlight.js/styles/github-dark.css';
 
 interface PostPageProps {
@@ -24,8 +25,55 @@ function formatDate(dateString: string): string {
 }
 
 export default function PostPage({ post }: PostPageProps) {
+  const siteUrl = 'https://jonatasleon.github.io';
+  const postUrl = `${siteUrl}/posts/${post.slug}/`;
+  
+  // Format date for structured data (ISO 8601)
+  const formatDateForSchema = (dateString: string): string => {
+    const dateOnly = dateString.split(' ')[0];
+    const [year, month, day] = dateOnly.split('-').map(Number);
+    const date = new Date(year, month - 1, day);
+    return date.toISOString();
+  };
+
+  // Structured data for blog post
+  const postStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt || post.title,
+    datePublished: formatDateForSchema(post.date),
+    dateModified: formatDateForSchema(post.date),
+    author: {
+      '@type': 'Person',
+      name: 'Jonatas Leon',
+    },
+    publisher: {
+      '@type': 'Person',
+      name: 'Jonatas Leon',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': postUrl,
+    },
+    url: postUrl,
+  };
+
   return (
     <Layout>
+      <SEO
+        title={post.title}
+        description={post.excerpt || post.title}
+        url={`/posts/${post.slug}/`}
+        type="article"
+        publishedTime={formatDateForSchema(post.date)}
+        modifiedTime={formatDateForSchema(post.date)}
+        author="Jonatas Leon"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(postStructuredData) }}
+      />
       <article className="post">
         <header className="post-header">
           <h1>{post.title}</h1>

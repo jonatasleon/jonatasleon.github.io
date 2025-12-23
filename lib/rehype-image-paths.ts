@@ -15,6 +15,16 @@ export function rehypeImagePaths(slug: string): Plugin<[], Root> {
             // Transform to absolute path: /posts/[slug]/image.png
             node.properties.src = `/posts/${slug}/${imageName}`;
           }
+
+          // Add alt text if missing (SEO improvement)
+          if (!node.properties.alt) {
+            // Use image filename without extension as alt text
+            const imageName = (node.properties.src as string)
+              .split('/')
+              .pop()
+              ?.replace(/\.[^/.]+$/, '') || 'Blog post image';
+            node.properties.alt = imageName;
+          }
         }
       });
     };

@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { getAllPosts, Post } from '@/lib/posts';
 import Layout from '@/components/Layout';
+import SEO from '@/components/SEO';
 
 interface HomeProps {
   posts: Post[];
@@ -24,8 +25,39 @@ function formatDate(dateString: string): string {
 }
 
 export default function Home({ posts }: HomeProps) {
+  const siteUrl = 'https://jonatasleon.github.io';
+  
+  // Structured data for blog
+  const blogStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Jonatas Leon',
+    description: 'A blog about my thoughts and experiences.',
+    url: siteUrl,
+    author: {
+      '@type': 'Person',
+      name: 'Jonatas Leon',
+    },
+    blogPost: posts.map((post) => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.excerpt || '',
+      datePublished: post.date,
+      url: `${siteUrl}/posts/${post.slug}/`,
+    })),
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Home"
+        description="A blog about my thoughts and experiences. Technical articles, tutorials, and personal reflections."
+        url="/"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogStructuredData) }}
+      />
       <div className="container">
         <header className="header">
           <h1>Jonatas Leon</h1>
