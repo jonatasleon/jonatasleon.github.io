@@ -18,7 +18,7 @@ export default function Layout({ children }: LayoutProps) {
       <main>{children}</main>
       <footer className="footer">
         <div className="footer-container">
-          <p>&copy; {new Date().getFullYear()} June's Echo</p>
+          <p>&copy; {new Date().getFullYear()} Jonatas Leon</p>
         </div>
       </footer>
 

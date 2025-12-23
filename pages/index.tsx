@@ -12,7 +12,7 @@ export default function Home({ posts }: HomeProps) {
     <Layout>
       <div className="container">
         <header className="header">
-          <h1>June's Echo</h1>
+          <h1>Jonatas Leon</h1>
           <p>A blog about my thoughts and experiences.</p>
         </header>
 
