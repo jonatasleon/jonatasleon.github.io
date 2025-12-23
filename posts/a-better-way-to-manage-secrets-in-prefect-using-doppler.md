@@ -1,4 +1,8 @@
-# A Better Way to Manage Secrets in Prefect Using Doppler
+---
+title: A Better Way to Manage Secrets in Prefect Using Doppler
+date: 2025-12-22
+excerpt: A better way to manage secrets in Prefect using Doppler
+---
 
 Recently I came across [Doppler](https://doppler.com/) and I wanted to share a specific use case for it.
 
