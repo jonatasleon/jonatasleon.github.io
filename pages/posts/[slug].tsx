@@ -6,6 +6,22 @@ interface PostPageProps {
   post: Post;
 }
 
+// Helper function to format date-only strings without timezone issues
+function formatDate(dateString: string): string {
+  // Parse date string (handles both "YYYY-MM-DD" and "YYYY-MM-DD HH:mm:ss" formats)
+  const dateOnly = dateString.split(' ')[0]; // Get just the date part
+  const [year, month, day] = dateOnly.split('-').map(Number);
+
+  // Create date in local timezone (not UTC)
+  const date = new Date(year, month - 1, day);
+
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
 export default function PostPage({ post }: PostPageProps) {
   return (
     <Layout>
@@ -13,11 +29,7 @@ export default function PostPage({ post }: PostPageProps) {
         <header className="post-header">
           <h1>{post.title}</h1>
           <time dateTime={post.date}>
-            {new Date(post.date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
+            {formatDate(post.date)}
           </time>
         </header>
         <div
