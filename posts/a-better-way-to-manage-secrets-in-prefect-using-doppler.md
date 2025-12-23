@@ -1,6 +1,6 @@
 ---
 title: A Better Way to Manage Secrets in Prefect Using Doppler
-date: 2025-12-22
+date: 2025-12-22 22:30:00
 excerpt: A better way to manage secrets in Prefect using Doppler
 ---
 
