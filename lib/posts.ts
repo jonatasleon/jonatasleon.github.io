@@ -7,6 +7,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeKatex from 'rehype-katex';
+import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
 import { rehypeImagePaths } from './rehype-image-paths';
 
@@ -46,6 +47,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     })
     .use(rehypeImagePaths(slug))
     .use(rehypeKatex)
+    .use(rehypeHighlight)
     .use(rehypeStringify)
     .process(content);
   const contentHtml = processedContent.toString();

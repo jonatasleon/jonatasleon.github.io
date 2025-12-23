@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { getAllPosts, getPostBySlug, Post } from '@/lib/posts';
 import Layout from '@/components/Layout';
+import 'highlight.js/styles/github-dark.css';
 
 interface PostPageProps {
   post: Post;
@@ -133,23 +134,39 @@ export default function PostPage({ post }: PostPageProps) {
           font-style: italic;
         }
 
-        .post-content :global(code) {
+        /* Inline code (single backticks) */
+        .post-content :global(code:not(pre code)) {
           background: #f4f4f4;
           padding: 0.2rem 0.4rem;
           border-radius: 3px;
           font-family: 'Courier New', monospace;
+          font-size: 0.9em;
+          color: #333;
         }
 
+        /* Code blocks (triple backticks) */
         .post-content :global(pre) {
-          background: #f4f4f4;
+          background: #0d1117;
           padding: 1rem;
           border-radius: 8px;
           overflow-x: auto;
           margin-bottom: 1.5rem;
+          border: 1px solid #30363d;
         }
 
         .post-content :global(pre code) {
           background: none;
+          padding: 0;
+          color: #c9d1d9;
+          font-size: 0.875rem;
+          line-height: 1.6;
+          display: block;
+          overflow-x: auto;
+        }
+
+        .post-content :global(pre code.hljs) {
+          display: block;
+          overflow-x: auto;
           padding: 0;
         }
 
