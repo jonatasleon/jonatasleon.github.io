@@ -228,6 +228,9 @@ export default function PostPage({ post }: PostPageProps) {
           height: auto;
           border-radius: 8px;
           margin: 1.5rem 0;
+          display: block;
+          width: 100%;
+          object-fit: contain;
         }
 
         .post-content :global(.math-display) {
