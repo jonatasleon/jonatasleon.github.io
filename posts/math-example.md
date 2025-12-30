@@ -1,6 +1,6 @@
 ---
 title: Math Equations Example
-date: 2024-01-16
+date: 2024-11-25
 excerpt: Demonstrating LaTeX math equation support in blog posts
 ---
 

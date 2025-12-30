@@ -1,6 +1,6 @@
 ---
 title: Welcome to My Blog
-date: 2024-01-15
+date: 2025-11-21
 excerpt: This is my first blog post. Welcome!
 ---
 
