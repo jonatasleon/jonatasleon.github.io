@@ -100,22 +100,22 @@ In the Prefect UI, let's access the blocks section:
 
 5. Then click on "Secret"
 
-    ![Secret block](./SCR-20251222-rlbc.png)
+   ![Secret block](./SCR-20251222-rlbc.png)
 
 6. Now we need to fill the form with the following information:
    - Name: `doppler-config`
    - Type: `JSON`
    - Value:
 
-      ```json
-      {
-        "project": "my-project",
-        "config": "dev",
-        "access_token": "sv.*********************"
-      }
-      ```
+     ```json
+     {
+       "project": "my-project",
+       "config": "dev",
+       "access_token": "sv.*********************"
+     }
+     ```
 
-      Remember to replace the `access_token` with the one you copied earlier.
+     Remember to replace the `access_token` with the one you copied earlier.
 
    ![Fill the form](./SCR-20251222-rmib.png)
 

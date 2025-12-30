@@ -26,7 +26,7 @@ function formatDate(dateString: string): string {
 
 export default function Home({ posts }: HomeProps) {
   const siteUrl = 'https://jonatasleon.github.io';
-  
+
   // Structured data for blog
   const blogStructuredData = {
     '@context': 'https://schema.org',
@@ -67,16 +67,17 @@ export default function Home({ posts }: HomeProps) {
         <section className="posts">
           <h2>Latest Posts</h2>
           {posts.length === 0 ? (
-            <p>No posts yet. Create your first post in the <code>posts/</code> directory!</p>
+            <p>
+              No posts yet. Create your first post in the <code>posts/</code>{' '}
+              directory!
+            </p>
           ) : (
             <ul className="post-list">
               {posts.map((post) => (
                 <li key={post.slug} className="post-item">
                   <Link href={`/posts/${post.slug}`}>
                     <h3>{post.title}</h3>
-                    <time dateTime={post.date}>
-                      {formatDate(post.date)}
-                    </time>
+                    <time dateTime={post.date}>{formatDate(post.date)}</time>
                     {post.excerpt && <p className="excerpt">{post.excerpt}</p>}
                   </Link>
                 </li>

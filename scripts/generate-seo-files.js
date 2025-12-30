@@ -90,4 +90,3 @@ try {
   console.error('Error generating SEO files:', error);
   process.exit(1);
 }
-

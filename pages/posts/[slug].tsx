@@ -27,7 +27,7 @@ function formatDate(dateString: string): string {
 export default function PostPage({ post }: PostPageProps) {
   const siteUrl = 'https://jonatasleon.github.io';
   const postUrl = `${siteUrl}/posts/${post.slug}/`;
-  
+
   // Format date for structured data (ISO 8601)
   const formatDateForSchema = (dateString: string): string => {
     const dateOnly = dateString.split(' ')[0];
@@ -77,9 +77,7 @@ export default function PostPage({ post }: PostPageProps) {
       <article className="post">
         <header className="post-header">
           <h1>{post.title}</h1>
-          <time dateTime={post.date}>
-            {formatDate(post.date)}
-          </time>
+          <time dateTime={post.date}>{formatDate(post.date)}</time>
         </header>
         <div
           className="post-content"

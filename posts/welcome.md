@@ -28,7 +28,7 @@ If you're reading this, you've successfully set up your blog! To create new post
 
 This blog supports full Markdown syntax including:
 
-- **Bold** and *italic* text
+- **Bold** and _italic_ text
 - Code blocks with syntax highlighting
 - Lists and links
 - Images and more!

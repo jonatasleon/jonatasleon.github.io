@@ -63,7 +63,7 @@ excerpt: This is a sample blog post
 
 # My First Blog Post
 
-This is the content of my blog post. You can use **bold**, *italic*, and other Markdown features.
+This is the content of my blog post. You can use **bold**, _italic_, and other Markdown features.
 
 ## Subheading
 

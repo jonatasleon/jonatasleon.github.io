@@ -25,7 +25,8 @@ export function getPostSlugs(): string[] {
   if (!fs.existsSync(postsDirectory)) {
     return [];
   }
-  return fs.readdirSync(postsDirectory)
+  return fs
+    .readdirSync(postsDirectory)
     .filter((file) => file.endsWith('.md'))
     .map((file) => file.replace(/\.md$/, ''));
 }
