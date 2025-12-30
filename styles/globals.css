@@ -1,3 +1,43 @@
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+  --border-color: #e0e0e0;
+  --footer-bg: #f9f9f9;
+  --footer-text: #666;
+  --link-color: #2563eb;
+  --code-bg: #f4f4f4;
+  --code-text: #333;
+  --post-border: #e0e0e0;
+  --blockquote-border: #2563eb;
+  --blockquote-text: #666;
+  --card-bg: #fff;
+  --card-border: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --image-border: #d0d0d0;
+  --image-shadow: rgba(0, 0, 0, 0.15);
+  --image-bg: #f5f5f5;
+}
+
+.dark {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --border-color: #333;
+  --footer-bg: #0f0f0f;
+  --footer-text: #999;
+  --link-color: #60a5fa;
+  --code-bg: #2a2a2a;
+  --code-text: #e0e0e0;
+  --post-border: #333;
+  --blockquote-border: #60a5fa;
+  --blockquote-text: #b0b0b0;
+  --card-bg: #1f1f1f;
+  --card-border: #333;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --image-border: #555;
+  --image-shadow: rgba(0, 0, 0, 0.6);
+  --image-bg: #252525;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -14,8 +54,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  color: #333;
-  background: #fff;
+  color: var(--text-color);
+  background: var(--bg-color);
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 a {

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
+import DarkModeToggle from './DarkModeToggle';
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,6 +14,8 @@ export default function Layout({ children }: LayoutProps) {
           <Link href="/" className="nav-link">
             Home
           </Link>
+          <div className="nav-spacer" />
+          <DarkModeToggle />
         </div>
       </nav>
       <main>{children}</main>
@@ -24,12 +27,15 @@ export default function Layout({ children }: LayoutProps) {
 
       <style jsx>{`
         .navbar {
-          background: #fff;
-          border-bottom: 1px solid #e0e0e0;
+          background: var(--bg-color);
+          border-bottom: 1px solid var(--border-color);
           padding: 1rem 0;
           position: sticky;
           top: 0;
           z-index: 100;
+          transition:
+            background-color 0.2s,
+            border-color 0.2s;
         }
 
         .nav-container {
@@ -41,21 +47,25 @@ export default function Layout({ children }: LayoutProps) {
           gap: 2rem;
         }
 
+        .nav-spacer {
+          flex: 1;
+        }
+
         .nav-logo {
           font-size: 1.5rem;
           font-weight: bold;
           text-decoration: none;
-          color: #2563eb;
+          color: var(--link-color);
         }
 
         .nav-link {
           text-decoration: none;
-          color: #333;
+          color: var(--text-color);
           transition: color 0.2s;
         }
 
         .nav-link:hover {
-          color: #2563eb;
+          color: var(--link-color);
         }
 
         main {
@@ -63,10 +73,13 @@ export default function Layout({ children }: LayoutProps) {
         }
 
         .footer {
-          background: #f9f9f9;
-          border-top: 1px solid #e0e0e0;
+          background: var(--footer-bg);
+          border-top: 1px solid var(--border-color);
           padding: 2rem 0;
           margin-top: 4rem;
+          transition:
+            background-color 0.2s,
+            border-color 0.2s;
         }
 
         .footer-container {
@@ -74,7 +87,7 @@ export default function Layout({ children }: LayoutProps) {
           margin: 0 auto;
           padding: 0 1rem;
           text-align: center;
-          color: #666;
+          color: var(--footer-text);
         }
       `}</style>
     </>

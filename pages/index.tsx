@@ -102,18 +102,18 @@ export default function Home({ posts }: HomeProps) {
         .header h1 {
           font-size: 3rem;
           margin-bottom: 1rem;
-          color: #333;
+          color: var(--text-color);
         }
 
         .header p {
           font-size: 1.2rem;
-          color: #666;
+          color: var(--footer-text);
         }
 
         .posts h2 {
           font-size: 2rem;
           margin-bottom: 2rem;
-          color: #333;
+          color: var(--text-color);
         }
 
         .post-list {
@@ -124,13 +124,16 @@ export default function Home({ posts }: HomeProps) {
         .post-item {
           margin-bottom: 2rem;
           padding: 1.5rem;
-          border: 1px solid #e0e0e0;
+          border: 1px solid var(--card-border);
           border-radius: 8px;
-          transition: box-shadow 0.2s;
+          transition:
+            box-shadow 0.2s,
+            border-color 0.2s;
+          background: var(--card-bg);
         }
 
         .post-item:hover {
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 12px var(--shadow);
         }
 
         .post-item a {
@@ -141,27 +144,29 @@ export default function Home({ posts }: HomeProps) {
         .post-item h3 {
           margin: 0 0 0.5rem 0;
           font-size: 1.5rem;
-          color: #2563eb;
+          color: var(--link-color);
         }
 
         .post-item time {
           display: block;
           font-size: 0.9rem;
-          color: #666;
+          color: var(--footer-text);
           margin-bottom: 0.5rem;
         }
 
         .post-item .excerpt {
           margin: 0.5rem 0 0 0;
-          color: #555;
+          color: var(--text-color);
           line-height: 1.6;
+          opacity: 0.9;
         }
 
         code {
-          background: #f4f4f4;
+          background: var(--code-bg);
           padding: 0.2rem 0.4rem;
           border-radius: 3px;
           font-family: 'Courier New', monospace;
+          color: var(--code-text);
         }
       `}</style>
     </Layout>

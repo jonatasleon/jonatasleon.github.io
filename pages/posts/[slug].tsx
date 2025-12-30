@@ -95,23 +95,23 @@ export default function PostPage({ post }: PostPageProps) {
         .post-header {
           margin-bottom: 2rem;
           padding-bottom: 1rem;
-          border-bottom: 2px solid #e0e0e0;
+          border-bottom: 2px solid var(--post-border);
         }
 
         .post-header h1 {
           font-size: 2.5rem;
           margin: 0 0 1rem 0;
-          color: #333;
+          color: var(--text-color);
         }
 
         .post-header time {
           font-size: 1rem;
-          color: #666;
+          color: var(--footer-text);
         }
 
         .post-content {
           line-height: 1.8;
-          color: #333;
+          color: var(--text-color);
         }
 
         .post-content :global(h1),
@@ -120,7 +120,7 @@ export default function PostPage({ post }: PostPageProps) {
         .post-content :global(h4) {
           margin-top: 2rem;
           margin-bottom: 1rem;
-          color: #333;
+          color: var(--text-color);
         }
 
         .post-content :global(h1 .anchor-link),
@@ -136,7 +136,7 @@ export default function PostPage({ post }: PostPageProps) {
         .post-content :global(h2:hover),
         .post-content :global(h3:hover),
         .post-content :global(h4:hover) {
-          color: #2563eb;
+          color: var(--link-color);
         }
 
         .post-content :global(h1:hover .anchor-link),
@@ -173,21 +173,21 @@ export default function PostPage({ post }: PostPageProps) {
         }
 
         .post-content :global(blockquote) {
-          border-left: 4px solid #2563eb;
+          border-left: 4px solid var(--blockquote-border);
           padding-left: 1rem;
           margin: 1.5rem 0;
-          color: #666;
+          color: var(--blockquote-text);
           font-style: italic;
         }
 
         /* Inline code (single backticks) */
         .post-content :global(code:not(pre code)) {
-          background: #f4f4f4;
+          background: var(--code-bg);
           padding: 0.2rem 0.4rem;
           border-radius: 3px;
           font-family: 'Courier New', monospace;
           font-size: 0.9em;
-          color: #333;
+          color: var(--code-text);
         }
 
         /* Code blocks (triple backticks) */
@@ -198,6 +198,11 @@ export default function PostPage({ post }: PostPageProps) {
           overflow-x: auto;
           margin-bottom: 1.5rem;
           border: 1px solid #30363d;
+        }
+
+        :global(.dark) .post-content :global(pre) {
+          background: #0d1117;
+          border-color: #30363d;
         }
 
         .post-content :global(pre code) {
@@ -217,7 +222,7 @@ export default function PostPage({ post }: PostPageProps) {
         }
 
         .post-content :global(a) {
-          color: #2563eb;
+          color: var(--link-color);
           text-decoration: underline;
         }
 
@@ -229,6 +234,18 @@ export default function PostPage({ post }: PostPageProps) {
           display: block;
           width: 100%;
           object-fit: contain;
+          border: 2px solid var(--image-border);
+          box-shadow: 0 2px 8px var(--image-shadow);
+          background: var(--image-bg);
+          padding: 2px;
+          transition:
+            border-color 0.2s,
+            box-shadow 0.2s;
+        }
+
+        .post-content :global(img:hover) {
+          box-shadow: 0 4px 12px var(--image-shadow);
+          border-color: var(--link-color);
         }
 
         .post-content :global(.math-display) {
