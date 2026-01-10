@@ -25,7 +25,7 @@ function formatDate(dateString: string): string {
 }
 
 export default function Home({ posts }: HomeProps) {
-  const siteUrl = 'https://jonatasleon.github.io';
+  const siteUrl = 'https://jonatasleon.com';
 
   // Structured data for blog
   const blogStructuredData = {

@@ -25,7 +25,7 @@ function formatDate(dateString: string): string {
 }
 
 export default function PostPage({ post }: PostPageProps) {
-  const siteUrl = 'https://jonatasleon.github.io';
+  const siteUrl = 'https://jonatasleon.com';
   const postUrl = `${siteUrl}/posts/${post.slug}/`;
 
   // Format date for structured data (ISO 8601)

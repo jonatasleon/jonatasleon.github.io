@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-const siteUrl = 'https://jonatasleon.github.io';
+const siteUrl = 'https://jonatasleon.com';
 const postsDirectory = path.join(process.cwd(), 'posts');
 const publicDirectory = path.join(process.cwd(), 'public');
 

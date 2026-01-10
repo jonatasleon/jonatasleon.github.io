@@ -14,7 +14,7 @@ interface SEOProps {
 
 const defaultTitle = 'Jonatas Leon - Blog';
 const defaultDescription = 'A blog about my thoughts and experiences.';
-const siteUrl = 'https://jonatasleon.github.io';
+const siteUrl = 'https://jonatasleon.com';
 const defaultImage = `${siteUrl}/og-image.png`;
 
 export default function SEO({
